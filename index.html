@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Invitación Temu!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f2f2f2;
+    }
+    h2 {
+      color: #333;
+    }
+    .btn {
+      background-color: #ff6200;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .share-buttons {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎁 ¿Puedes aceptar mi invitación para que pueda obtener un regalo gratis?</h2>
+
+  <button class="btn" onclick="window.open('https://temu.com/s/YTDrWXCwz56ZICCb', '_blank')">
+    Ir al regalo 🎁
+  </button>
+
+  <div class="share-buttons">
+    <h3>📲 Compartir este enlace:</h3>
+
+    <button class="btn" onclick="compartirWhatsApp()">WhatsApp</button>
+    <button class="btn" onclick="compartirTelegram()">Telegram</button>
+    <button class="btn" onclick="compartirFacebook()">Facebook</button>
+    <button class="btn" onclick="copiarEnlace()">📋 Copiar enlace</button>
+  </div>
+
+  <script>
+    const link = "https://temu.com/s/YTDrWXCwz56ZICCb";
+
+    function compartirWhatsApp() {
+      window.open(`https://wa.me/?text=${encodeURIComponent(link)}`, "_blank");
+    }
+
+    function compartirTelegram() {
+      window.open(`https://t.me/share/url?url=${encodeURIComponent(link)}`, "_blank");
+    }
+
+    function compartirFacebook() {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, "_blank");
+    }
+
+    function copiarEnlace() {
+      navigator.clipboard.writeText(link);
+      alert("✅ Enlace copiado al portapapeles");
+    }
+  </script>
+
+</body>
+</html>
